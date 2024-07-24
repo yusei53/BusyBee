@@ -4,7 +4,7 @@ import theme from "./libs/theme/theme";
 
 const siteName = "Busy me";
 const description =
-  "Busy meは、忙しいあなたのためのToDoリスト可視化アプリです。思いつく限りのタスクを吐き出し、優先度をつけて整理することで、効率的にタスクを管理できます。Busy meを使ってタスク管理をスムーズにし、日々の生産性を向上させましょう。";
+  "思いつく限りのタスクを吐き出し、優先度をつけて整理することができるtodo可視化サービス";
 export const metadata: Metadata = {
   metadataBase: new URL("https://busy-me.vercel.app/"),
   title: {
