@@ -77,7 +77,7 @@ const SortTodoPage = () => {
           `${field.priority === "" ? 1 : field.priority}. ${field.value}`
       )
       .join("\n");
-    const fullText = `わたしの優先度付きToDoリスト:\n${todoList}\n\n作成場所 : Busy me\n https://busy-me.vercel.app/`;
+    const fullText = `優先順位付きToDoリスト\n${todoList}\n\n作成場所 : Busy me\n https://busy-me.vercel.app/`;
     navigator.clipboard
       .writeText(fullText)
       .then(() => {
