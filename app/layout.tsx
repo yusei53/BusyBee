@@ -5,6 +5,7 @@ import theme from "./libs/theme/theme";
 const siteName = "Busy me";
 const description =
   "思いつく限りのタスクを吐き出し、整理するtodo可視化サービス";
+const ogImageUrl = "https://busy-me.vercel.app/busy-me.png";
 export const metadata: Metadata = {
   metadataBase: new URL("https://busy-me.vercel.app/"),
   title: {
@@ -12,11 +13,20 @@ export const metadata: Metadata = {
     template: "%s | Busy me",
   },
   description: description,
-  // 意図しないOGPなためコメントアウト
-  // openGraph: {
-  //   title: siteName,
-  //   description: description,
-  // },
+  openGraph: {
+    type: "website",
+    url: "https://busy-me.vercel.app/",
+    title: siteName,
+    description: description,
+    images: [
+      {
+        url: ogImageUrl,
+        width: 80,
+        height: 80,
+        alt: `${siteName} OGP Image`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
