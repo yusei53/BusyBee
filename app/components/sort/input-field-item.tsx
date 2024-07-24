@@ -1,7 +1,7 @@
 import { Box, TextField, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-type InputField = {
+export type InputField = {
   value: string;
   priority: number | string;
 };

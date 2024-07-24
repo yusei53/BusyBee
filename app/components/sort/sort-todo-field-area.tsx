@@ -1,13 +1,8 @@
 import { Box } from "@mui/material";
 import { ThemeTypography } from "@/app/libs/theme/theme";
-import InputFieldItem from "./input-field-item";
+import InputFieldItem, { InputField } from "./input-field-item";
 import CopyButton from "../common/copy-button";
 import { useRef } from "react";
-
-type InputField = {
-  value: string;
-  priority: number | string;
-};
 
 type SortProps = {
   inputFields: InputField[];
