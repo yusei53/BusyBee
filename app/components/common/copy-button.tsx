@@ -1,5 +1,5 @@
 import { Tooltip } from "@mui/material";
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import CustomButton from "./button";
 
 type TProps = {
