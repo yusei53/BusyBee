@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 import React, { forwardRef } from "react";
-import CustomButton from "../common/button";
+import CustomButton from "./button";
 
 type TProps = {
   isOpenTip: boolean;
