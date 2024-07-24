@@ -4,7 +4,7 @@ import theme from "./libs/theme/theme";
 
 const siteName = "Busy me";
 const description =
-  "思いつく限りのタスクを吐き出し、優先度をつけて整理することができるtodo可視化サービス";
+  "思いつく限りのタスクを吐き出し、優先度をつけ整理できるtodo可視化サービス";
 export const metadata: Metadata = {
   metadataBase: new URL("https://busy-me.vercel.app/"),
   title: {
