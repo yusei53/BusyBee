@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import CustomButton from "../common/button";
 
 const Onboarding = () => {
   return (
@@ -26,6 +27,7 @@ const Onboarding = () => {
           ここはタスクを管理する場所ではありません。あくまで自分が今持っているタスクを吐き出し、可視化するための場所です。やることを多く感じて途方に暮れた時には、一度ここに書き出してみてください。
         </Typography>
       </Stack>
+      <CustomButton href="/" text="使ってみる" />
     </Box>
   );
 };
