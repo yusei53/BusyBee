@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { ThemeTypography } from "@/app/libs/theme/theme";
 import InputFieldItem from "./input-field-item";
-import CopyButton from "./copy-button";
+import CopyButton from "../common/copy-button";
 import { useRef } from "react";
 
 type InputField = {
@@ -56,13 +56,13 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
   };
 
   return (
-    <>
-      <Box mt={10}>
+    <Box my={10}>
+      <Box>
         <ThemeTypography lineHeight={2}>
           まずは思いつく限り自分のtodoを書き出してみてください。
         </ThemeTypography>
         <ThemeTypography lineHeight={2} mb={4}>
-          その後は優先度をつけて可視化してみましょう。
+          その後は数字で優先度をつけて可視化してみましょう。
         </ThemeTypography>
         {inputFields.map((inputField, index) => (
           <InputFieldItem
@@ -79,8 +79,8 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           />
         ))}
       </Box>
-      <Box mt={5}>
-        <ThemeTypography my={2}>あなたの優先度付きToDoリスト</ThemeTypography>
+      <Box my={10} py={3} px={4} border={"1px solid #DCDFE3"} borderRadius={6}>
+        <ThemeTypography>あなたの優先度付きToDoリスト</ThemeTypography>
         {sortedFields.map((inputField, index) => (
           <ThemeTypography key={index}>
             {inputField.priority === "" ? 1 : inputField.priority}.
@@ -88,14 +88,20 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           </ThemeTypography>
         ))}
       </Box>
-      <Box position="relative">
+      <ThemeTypography>
+        十分に吐き出せたら、あなたの優先度付きToDoリストをコピーして、友達や家族に共有してみましょう。times文化があるコミュニティでは、ToDoを可視化することでお互いの進捗や状況を共有し、切磋琢磨することができます。
+      </ThemeTypography>
+      <ThemeTypography mt={3}>
+        あなたのタスクが効率よく進むことを願っています。
+      </ThemeTypography>
+      <Box position="relative" mb={15}>
         <CopyButton
           ref={buttonRef}
           isOpenTip={isOpenTip}
           handleCopyClick={handleCopyClick}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 

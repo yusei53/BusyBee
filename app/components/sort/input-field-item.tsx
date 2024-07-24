@@ -39,7 +39,12 @@ const InputFieldItem: React.FC<InputFieldItemProps> = ({
   handleDeleteField,
 }) => {
   return (
-    <Box display="flex" alignItems="center" mb={1}>
+    <Box
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      mb={1}
+    >
       <TextField
         value={inputField.value}
         onChange={(event) => handleChange(index, event)}
