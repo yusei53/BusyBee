@@ -13,7 +13,7 @@ const Onboarding = () => {
     >
       <Image src="/busy-me.png" alt="busy me" width={100} height={100} />
       <Typography component="h1" fontSize={25} letterSpacing={0.5}>
-        busy me
+        Busy me
       </Typography>
 
       <Stack spacing={4} my={5}>
