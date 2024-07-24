@@ -1,5 +1,7 @@
+import Onboarding from "./components/home/onboarding";
+
 const Home = () => {
-  return <div>busy me</div>;
+  return <Onboarding />;
 };
 
 export default Home;

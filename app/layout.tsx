@@ -1,4 +1,6 @@
+import { Container, ThemeProvider } from "@mui/material";
 import type { Metadata } from "next";
+import theme from "./libs/theme/theme";
 
 export const metadata: Metadata = {
   title: "busy me",
@@ -12,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>{children}</body>
+      <body style={{ margin: 0 }}>
+        <ThemeProvider theme={theme}>
+          <Container maxWidth="sm">{children}</Container>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
