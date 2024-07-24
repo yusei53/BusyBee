@@ -16,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ margin: 0 }}>
         <ThemeProvider theme={theme}>
-          <Container maxWidth="sm">{children}</Container>
+          <Container maxWidth="sm" sx={{ my: 7 }}>
+            {children}
+          </Container>
         </ThemeProvider>
       </body>
     </html>
