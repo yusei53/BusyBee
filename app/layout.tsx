@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     template: "%s | Busy me",
   },
   description: description,
-  openGraph: {
-    title: siteName,
-    description: description,
-  },
+  // 意図しないOGPなためコメントアウト
+  // openGraph: {
+  //   title: siteName,
+  //   description: description,
+  // },
 };
 
 export default function RootLayout({
