@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     url: "https://busy-me.vercel.app/",
     title: siteName,
     description: description,
+    siteName: siteName,
   },
   twitter: {
     title: siteName,
