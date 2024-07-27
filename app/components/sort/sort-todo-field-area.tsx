@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { ThemeTypography } from "@/app/libs/theme/theme";
 import InputFieldItem, { InputField } from "./input-field-item";
-import CopyButton from "../common/copy-button";
+import CopyButton from "../button/copy-button";
 import { useRef } from "react";
 
 type SortProps = {

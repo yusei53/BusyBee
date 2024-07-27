@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import CustomButton from "../common/button";
+import CustomButton from "../button/button";
 import { ThemeTypography } from "@/app/libs/theme/theme";
 
 const Onboarding = () => {
