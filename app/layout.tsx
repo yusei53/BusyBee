@@ -28,6 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="twitter:card" content="summary" />
+      </head>
       <body style={{ margin: 0 }}>
         <ThemeProvider theme={theme}>
           <Container maxWidth="sm" sx={{ my: 7 }}>
