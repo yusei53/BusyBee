@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import theme from "./libs/theme/theme";
 
 const siteName = "Busy me";
-const description =
-  "思いつく限りのタスクを吐き出し、整理するtodo可視化サービス";
+const description = "思いつく限りタスクを吐き出し、整理するtodo可視化サービス";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://busy-me.vercel.app/"),
