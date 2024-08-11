@@ -74,7 +74,14 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           />
         ))}
       </Box>
-      <Box my={10} py={3} px={4} border={"1px solid #DCDFE3"} borderRadius={6}>
+      <Box
+        mt={10}
+        mb={5}
+        py={3}
+        px={4}
+        border={"1px solid #DCDFE3"}
+        borderRadius={6}
+      >
         <ThemeTypography>私のToDoリスト</ThemeTypography>
         {sortedFields.map((inputField, index) => (
           <ThemeTypography key={index}>
