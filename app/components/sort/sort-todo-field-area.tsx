@@ -83,12 +83,6 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           </ThemeTypography>
         ))}
       </Box>
-      <ThemeTypography>
-        十分に吐き出せたら、あなたの優先度付きToDoリストをコピーして、友達や家族に共有してみましょう。times文化があるコミュニティでは、ToDoを可視化することでお互いの進捗や状況を共有し、切磋琢磨することができます。誰にも見られたくない方は、メモアプリなんかにこれを貼り付けて生産性を向上させてください。
-      </ThemeTypography>
-      <ThemeTypography mt={3}>
-        あなたのタスクが効率よく進むことを願っています。
-      </ThemeTypography>
       <Box position="relative" mb={15}>
         <CopyButton
           ref={buttonRef}
@@ -96,6 +90,12 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           handleCopyClick={handleCopyClick}
         />
       </Box>
+      <ThemeTypography>
+        十分に吐き出せたら、あなたの優先度付きToDoリストをコピーして、友達や家族に共有してみましょう。times文化があるコミュニティでは、ToDoを可視化することでお互いの進捗や状況を共有し、切磋琢磨することができます。誰にも見られたくない方は、メモアプリなんかにこれを貼り付けて生産性を向上させてください。
+      </ThemeTypography>
+      <ThemeTypography mt={3}>
+        あなたのタスクが効率よく進むことを願っています。
+      </ThemeTypography>
     </Box>
   );
 };
