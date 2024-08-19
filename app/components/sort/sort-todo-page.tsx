@@ -2,15 +2,16 @@
 import { useState, useRef } from "react";
 import SortTodoFieldArea from "./sort-todo-field-area";
 
-interface InputField {
+type InputField = {
   value: string;
   priority: number | string;
-}
+};
 
 const SortTodoPage = () => {
   const [inputFields, setInputFields] = useState<InputField[]>([
     { value: "", priority: 1 },
   ]);
+  const [todoTitle, setTodoTitle] = useState<string>("");
   const inputRefs = useRef<HTMLInputElement[]>([]);
   const [isComposing, setIsComposing] = useState(false);
   const [openTip, setOpenTip] = useState(false);
@@ -19,7 +20,13 @@ const SortTodoPage = () => {
     setInputFields([...inputFields, { value: "", priority: 1 }]);
   };
 
-  const handleChange = (
+  const handleTodoTitleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setTodoTitle(event.target.value);
+  };
+
+  const handleTodoChange = (
     index: number,
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -77,7 +84,7 @@ const SortTodoPage = () => {
           `${field.priority === "" ? 1 : field.priority}. ${field.value}`
       )
       .join("\n");
-    const fullText = `優先順位付きToDoリスト\n${todoList}\n\n作成場所 : Busy me\n https://busy-me.vercel.app/`;
+    const fullText = `${todoTitle}\n${todoList}\n\n作成場所 : Busy me\n https://busy-me.vercel.app/`;
     navigator.clipboard
       .writeText(fullText)
       .then(() => {
@@ -89,11 +96,13 @@ const SortTodoPage = () => {
 
   return (
     <SortTodoFieldArea
+      todoTitle={todoTitle}
       inputFields={inputFields}
       inputRefs={inputRefs}
       isOpenTip={openTip}
       handleAddField={handleAddField}
-      handleChange={handleChange}
+      handleTodoTitleChange={handleTodoTitleChange}
+      handleTodoChange={handleTodoChange}
       handlePriorityChange={handlePriorityChange}
       handleKeyDown={handleKeyDown}
       handleCompositionStart={handleCompositionStart}
@@ -101,7 +110,6 @@ const SortTodoPage = () => {
       handleDeleteField={handleDeleteField}
       sortedFields={sortedFields}
       handleCopyToClipboard={handleCopyToClipboard}
-      setInputFields={setInputFields}
     />
   );
 };
