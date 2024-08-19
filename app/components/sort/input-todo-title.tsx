@@ -35,6 +35,7 @@ const InputTodoTitle: React.FC<InputTodoTitleProps> = ({
           },
         }}
         sx={{
+          mb: 4,
           width: "400px",
           "& .MuiInput-underline:before": {
             borderBottomColor: "#DCDFE3",

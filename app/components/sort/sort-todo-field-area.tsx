@@ -60,7 +60,7 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
     <Box my={10}>
       <Box>
         <ThemeTypography lineHeight={2}>
-          まずは思いつく限り自分のtodoを書き出してみましょう。
+          まずは思いつく限り自分のtodoを書き出し、自分が作成したtodoにタイトルをつけましょう。
         </ThemeTypography>
         <ThemeTypography lineHeight={2} mb={4}>
           その後は数字で優先度をつけて可視化してみましょう。
@@ -84,14 +84,7 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           />
         ))}
       </Box>
-      <Box
-        mt={10}
-        mb={5}
-        py={3}
-        px={4}
-        border={"1px solid #DCDFE3"}
-        borderRadius={6}
-      >
+      <Box my={5} py={3} px={4} border={"1px solid #DCDFE3"} borderRadius={6}>
         <ThemeTypography>{todoTitle}</ThemeTypography>
         {sortedFields.map((inputField, index) => (
           <ThemeTypography key={index}>
