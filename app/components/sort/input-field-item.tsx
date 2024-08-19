@@ -1,4 +1,10 @@
-import { Box, TextField, IconButton } from "@mui/material";
+import {
+  Box,
+  TextField,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export type InputField = {
@@ -38,11 +44,14 @@ const InputFieldItem: React.FC<InputFieldItemProps> = ({
   handleCompositionEnd,
   handleDeleteField,
 }) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box
-      display={"flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
+      display={matches ? "flex" : "block"}
+      alignItems={matches ? "center" : "initial"}
+      justifyContent={matches ? "center" : "initial"}
       mb={1}
     >
       <TextField
