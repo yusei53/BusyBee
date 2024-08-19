@@ -1,18 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, Input } from "@mui/material";
 import { ThemeTypography } from "@/app/libs/theme/theme";
 import InputFieldItem, { InputField } from "./input-field-item";
 import CopyButton from "../button/copy-button";
 import { useRef } from "react";
+import InputTodoTitle from "./input-todo-title";
 
 type SortProps = {
+  todoTitle: string;
   inputFields: InputField[];
-  setInputFields: (value: InputField[]) => void;
   inputRefs: React.MutableRefObject<
     (HTMLInputElement | HTMLTextAreaElement | null)[]
   >;
   isOpenTip: boolean;
   handleAddField: () => void;
-  handleChange: (
+  handleTodoTitleChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  handleTodoChange: (
     index: number,
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
@@ -32,10 +36,12 @@ type SortProps = {
 };
 
 const SortTodoFieldArea: React.FC<SortProps> = ({
+  todoTitle,
   inputFields,
   inputRefs,
   isOpenTip,
-  handleChange,
+  handleTodoTitleChange,
+  handleTodoChange,
   handlePriorityChange,
   handleKeyDown,
   handleCompositionStart,
@@ -54,18 +60,22 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
     <Box my={10}>
       <Box>
         <ThemeTypography lineHeight={2}>
-          まずは思いつく限り自分のtodoを書き出してみてください。
+          まずは思いつく限り自分のtodoを書き出し、自分が作成したtodoにタイトルをつけましょう。
         </ThemeTypography>
         <ThemeTypography lineHeight={2} mb={4}>
           その後は数字で優先度をつけて可視化してみましょう。
         </ThemeTypography>
+        <InputTodoTitle
+          todoTitle={todoTitle}
+          handleChange={handleTodoTitleChange}
+        />
         {inputFields.map((inputField, index) => (
           <InputFieldItem
             key={index}
             index={index}
             inputField={inputField}
             inputRef={(el) => (inputRefs.current[index] = el)}
-            handleChange={handleChange}
+            handleChange={handleTodoChange}
             handlePriorityChange={handlePriorityChange}
             handleKeyDown={handleKeyDown}
             handleCompositionStart={handleCompositionStart}
@@ -74,15 +84,8 @@ const SortTodoFieldArea: React.FC<SortProps> = ({
           />
         ))}
       </Box>
-      <Box
-        mt={10}
-        mb={5}
-        py={3}
-        px={4}
-        border={"1px solid #DCDFE3"}
-        borderRadius={6}
-      >
-        <ThemeTypography>私のToDoリスト</ThemeTypography>
+      <Box my={5} py={3} px={4} border={"1px solid #DCDFE3"} borderRadius={6}>
+        <ThemeTypography>{todoTitle}</ThemeTypography>
         {sortedFields.map((inputField, index) => (
           <ThemeTypography key={index}>
             {inputField.priority === "" ? 1 : inputField.priority}.
