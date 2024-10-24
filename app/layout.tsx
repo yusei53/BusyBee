@@ -2,7 +2,7 @@ import { Container, ThemeProvider } from "@mui/material";
 import type { Metadata } from "next";
 import theme from "./libs/theme/theme";
 
-const siteName = "Busy me";
+const siteName = "Busy me | todo可視化サービス";
 const description = "思いつく限りタスクを吐き出し、整理するtodo可視化サービス";
 
 export const metadata: Metadata = {
